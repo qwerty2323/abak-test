@@ -1,0 +1,6 @@
+Wed, 07 Nov 2012 22:07:07 +0600
+doc/README_FOR_APP	Wed, 07 Nov 2012 10:07:02 +0600
+app/controllers/application_controller.rb	Wed, 07 Nov 2012 22:05:42 +0600
+app/controllers/wiki_controller.rb	Wed, 07 Nov 2012 22:05:42 +0600
+app/helpers/application_helper.rb	Wed, 07 Nov 2012 22:07:01 +0600
+app/models/page.rb	Wed, 07 Nov 2012 22:06:27 +0600

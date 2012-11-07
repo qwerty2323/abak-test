@@ -1,0 +1,28 @@
+<%= form_for @page, :url => url_for(:controller => :wiki, :action => :update, :path => @page.ancestry_path.join('/'))  do |f| %>
+    <% if @page.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+          <ul>
+            <% @test.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :slug %>
+      <%= f.text_field :slug %>
+    </div>
+    <div>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+    </div>
+    <div>
+      <%= f.submit %>
+    </div>
+<% end %>

@@ -1,0 +1,6 @@
+<h1><%=  @homepage.title %></h1>
+<div class="content">
+  <%= @homepage.content %>
+</div>
+<h3>Other pages</h3>
+<%= tree_as_html(@pages) %>
