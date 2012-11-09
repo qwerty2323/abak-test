@@ -3,13 +3,6 @@
 class WikiController < ApplicationController
 
   ##
-  # Lists all pages
-  def index
-    @homepage = Page.find_by_slug 'home'
-    @pages = Page.hash_tree
-  end
-
-  ##
   # Show add form
   # Parent ID figured out from route
   def add
@@ -46,7 +39,7 @@ class WikiController < ApplicationController
     @page = Page.find_by_path(params[:path].split '/')
     @page.destroy
 
-    redirect_to :action => :index
+    redirect_to :action => :show, :path => 'home'
   end
 
   ##
