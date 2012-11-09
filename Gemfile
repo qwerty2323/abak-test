@@ -8,7 +8,6 @@ gem 'rails', '3.1.8'
 gem 'sqlite3'
 gem 'mysql2'
 gem 'closure_tree'
-gem 'factory_girl'
 
 # Gems used only for assets and not required
 # in production environments by default.
