@@ -14,7 +14,7 @@ class WikiController < ApplicationController
   # Edit an existing page
   def edit
     if params[:path] == 'home'
-      @page = Page.find_by_slug('home') || Page.new(:slug => 'home')
+      @page = Page.find_or_create_by_path(['home'])
     else
       @page = Page.find_by_path params[:path].split '/'
       @parent = Page.find_or_create_by_path params[:path].split '/'
@@ -30,7 +30,7 @@ class WikiController < ApplicationController
     parent_id = nil
     params[:path].split('/').each do |path_part|
       path.push path_part
-      if Page.find_by_path(path).instance_of? NilClass
+      if Page.find_by_path(path).is_a? NilClass
         p = Page.new(:slug => path_part, :title => path_part, :parent_id => parent_id)
         p.save
         parent_id = p.id
