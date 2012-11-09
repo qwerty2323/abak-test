@@ -18,7 +18,7 @@
       <%= f.text_field :slug %>
       <% if @parent %>
           <%= f.hidden_field :parent_id, {:value => @parent.id} %>
-          <span>Parent: <%= @parent.title %> (slug: <%= @parent.slug %>)</span>
+          <span>Parent: <%= @parent.title %> (slug: <%= @parent.ancestors.reverse.push(@parent.slug).join('/') %>), </span>
       <% end %>
     </div>
     <div>
