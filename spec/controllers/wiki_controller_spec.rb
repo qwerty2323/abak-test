@@ -10,7 +10,5 @@ describe WikiController do
 
   it "should allow creating a wiki page" do
     get :create, :page => :page
-    #To change this template use File | Settings | File Templates.
-    true.should == false
   end
 end

@@ -2,8 +2,6 @@ require "spec_helper"
 
 describe ApplicationHelper do
 
-  fixtures :pages
-
   it "should parse **bold** as <b>bold</b>" do
     content = '**bold text**'
     expect(helper.page_content_as_html content).eql? '<b>bold text</b>'
