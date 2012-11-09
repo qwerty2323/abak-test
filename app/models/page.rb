@@ -11,7 +11,7 @@ class Page < ActiveRecord::Base
   validates :title, :presence => true
   validates :slug, :presence  => true
   validates :slug, :exclusion => { :in => %w(add edit update create delete) }
-  validates :slug, :format => { :with => /[a-zA-Zа-яА-Я0-9]+/i }
+  validates :slug, :format => { :with => /^[a-zA-Zа-яА-Я0-9]+$/i }
 
   ##
   # Obvious.
