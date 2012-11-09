@@ -26,6 +26,19 @@ class WikiController < ApplicationController
   def create
     @page = Page.new(params[:page])
 
+    path = []
+    parent_id = nil
+    params[:path].split('/').each do |path_part|
+      path.push path_part
+      if Page.find_by_path(path).instance_of? NilClass
+        p = Page.new(:slug => path_part, :title => path_part, :parent_id => parent_id)
+        p.save
+        parent_id = p.id
+      end
+    end
+
+    @page.parent_id = parent_id
+
     if @page.save
       redirect_to :action => :show, :path => @page.ancestry_path
     else
